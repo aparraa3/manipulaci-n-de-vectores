@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de Vectores Numéricos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+        h2, h4 { color: #17365d; }
+        table { border-collapse: collapse; margin: 12px 0; }
+        td, th { border: 1px solid #777; padding: 8px; text-align: center; }
+        .controles td { border: none; text-align: left; }
+        button, select, input { padding: 6px 8px; margin: 3px; }
+        button { cursor: pointer; }
+        #id-table-vector-numerico { width: 100%; max-width: 1100px; }
+        #id-table-vector-numerico td { min-width: 28px; }
+        #id-txt-respuesta { width: min(700px, 90%); }
+        .grupo-botones { display: flex; flex-wrap: wrap; gap: 6px; }
+        .grupo-botones button { flex: 1 1 150px; }
+        .nota { color: #555; font-size: .92em; }
+    </style>
+</head>
+<body>
+    <h2>Ejercicio con Vectores</h2>
+    <table class="controles">
+        <tbody>
+            <tr>
+                <td>Dimensión del arreglo:</td>
+                <td>
+                    <select id="select-dimension-arreglo">
+                        <option value="4">4</option><option value="5">5</option>
+                        <option value="6">6</option><option value="7">7</option>
+                        <option value="8">8</option><option value="9">9</option>
+                        <option value="10" selected>10</option><option value="15">15</option>
+                        <option value="20">20</option><option value="25">25</option><option value="30">30</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Ingrese valor a buscar:</td>
+                <td><input type="number" id="id-valor-busqueda" maxlength="4" size="8"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="id-table-vector-numerico">
+        <thead><tr><th id="encabezado-vector" colspan="10">Vector numérico de 10 elementos</th></tr></thead>
+        <tbody>
+            <tr id="fila-indices"></tr>
+            <tr id="fila-valores"></tr>
+        </tbody>
+        <tfoot>
+            <tr><td colspan="10"><div class="grupo-botones">
+                <button id="btn-cargar-vector">Cargar vector aleatorio</button>
+                <button id="btn-vaciar-vector">Vaciar vector</button>
+                <button id="btn-buscar-valor">Buscar valor</button>
+            </div></td></tr>
+            <tr><td colspan="10"><div class="grupo-botones">
+                <button id="btn-numero-mayor">Número mayor</button>
+                <button id="btn-numero-menor">Número menor</button>
+                <button id="btn-sumar-valores">Suma de valores</button>
+                <button id="btn-producto-vector">Producto de valores</button>
+            </div></td></tr>
+            <tr><td colspan="10"><div class="grupo-botones">
+                <button id="btn-calcular-moda">Moda</button>
+                <button id="btn-calcular-media">Media</button>
+                <button id="btn-calcular-mediana">Mediana</button>
+            </div></td></tr>
+            <tr><td colspan="10"><div class="grupo-botones">
+                <button id="btn-desviacion">Desviación estándar</button>
+                <button id="btn-segundo-mayor">Segundo mayor</button>
+                <button id="btn-segundo-menor">Segundo menor</button>
+            </div></td></tr>
+            <tr><td colspan="10">
+                <label for="select-orden">Orden:</label>
+                <select id="select-orden"><option value="asc">Ascendente</option><option value="desc">Descendente</option></select>
+                <div class="grupo-botones">
+                    <button id="btn-seleccion">Ordenar por selección</button>
+                    <button id="btn-burbuja">Ordenar por burbuja</button>
+                </div>
+            </td></tr>
+        </tfoot>
+    </table>
+    <hr>
+    <table>
+        <thead><tr><th colspan="2">Cálculos con vectores</th></tr></thead>
+        <tbody><tr><td>Resultado:</td><td><input type="text" id="id-txt-respuesta" readonly></td></tr></tbody>
+    </table>
+    <p class="nota">Los valores aleatorios se generan entre 1 y 99. Los índices empiezan en 0.</p>
+
+<script src="script.js"></script>
+</body>
+</html>
